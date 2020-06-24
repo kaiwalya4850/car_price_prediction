@@ -1,7 +1,7 @@
 Transmission: Manual-0 Automatic-1 Direct-2
-Engine Fuel: 
+Engine Fuel: electric 4, natural gas 5
 Drive wheel: Rear-0 Front-1 All-2 four-3
 Size: compact- 0 midsize-1 Large-2
 Style: Coupe,convertible,sedan,wagon,4dr hatchback,2dr hatchback,4dr SUV, crew cab pickup(extended cab, all cab mini), 2dr SUV
 fuel: premium unleaded-0, regular unleaded-1, flex-2, diesel-3
-names: BMW-0,Audi-1,fiat,mercedes,3-benz,chrysler,nissan,volvo,mazda,mitsubishi,Ferrari,toyota,alfa,pontiac,maybach
+names: BMW-0,Audi-1,fiat,mercedes,3-benz,chrysler,nissan,volvo,mazda,mitsubishi,Ferrari,toyota,alfa,pontiac,maybach,mclaren,porsche,saab,GMC,hyundai,honda,plymout
