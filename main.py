@@ -50,13 +50,8 @@ def final(year,enginehp,enginecylinders,transmissiontype,fuel,cmpg,hmpg,make,mca
         lst.append(nm[i])
         i = i+1
     a = get_predictions(lst)
-    return render_template("form1.html")
-
-@app.route('/pred')
-def pred_page():
-    a = get_predictions(lst)
     print(a)
-    return render_template("form2.html", value = a)
+    return f"<h2>The Predicted car value is: {a}</h2>"
 
 
 if __name__ == "__main__":
