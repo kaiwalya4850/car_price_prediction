@@ -22,11 +22,41 @@ def get_predictions(list_of_ip):
 
 @app.route('/')
 def homepage():
-    return render_template('form1.html')
+    return render_template('main.html')
 
-# @app.route("/pred_form", methods=["POST", "GET"])
+@app.route("/form_pred", methods=["POST", "GET"])
+def data_fetch():
+    if request.method == "POST":
+        year_dat = request.form["year"]
+        enginehp_dat = request.form["enginehp"]
+        enginecylinders_dat = request.form["enginecylinders"]
+        transmissiontype_dat = request.form["transmissiontype"]
+        fuel_dat = request.form["fuel"]
+        cmpg_dat = request.form["cmpg"]
+        hmpg_dat = request.form["hmpg"]
+        make_dat = request.form["make"]
+        mcategory_dat = request.form["mcategory"]
+        drivenwheels_dat = request.form["drivenwheels"]
+        return redirect(url_for("final", year = year_dat,enginehp = enginehp_dat, enginecylinders = enginecylinders_dat, transmissiontype = transmissiontype_dat, fuel = fuel_dat , \
+                                 cmpg = cmpg_dat, hmpg = hmpg_dat, make = make_dat, mcategory = mcategory_dat, drivenwheels = drivenwheels_dat))  
+    else:
+        return render_template("form1.html") 
 
+@app.route("/<year> /<enginehp> /<enginecylinders> /<transmissiontype> /<fuel> /<cmpg> /<hmpg> /<make> /<mcategory> /<drivenwheels>")
+def final(year,enginehp,enginecylinders,transmissiontype,fuel,cmpg,hmpg,make,mcategory,drivenwheels):
+    nm = [year,enginehp,enginecylinders,transmissiontype,fuel,cmpg,hmpg,make,mcategory,drivenwheels]
+    lst = []
+    for i in range(len(nm)):
+        lst.append(nm[i])
+        i = i+1
+    a = get_predictions(lst)
+    return render_template("form1.html")
 
+@app.route('/pred')
+def pred_page():
+    a = get_predictions(lst)
+    print(a)
+    return render_template("form2.html", value = a)
 
 
 if __name__ == "__main__":
