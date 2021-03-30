@@ -20,7 +20,7 @@ def get_predictions(list_of_ip):
 #a = get_predictions(lst)
 #print(a)
 
-@app.route('/')
+@app.route('/')    
 def homepage():
     return render_template('main.html')
 
